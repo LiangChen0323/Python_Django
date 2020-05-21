@@ -1,1 +1,15 @@
-Hello from Blog
+{% extends 'portfolio/base.html' %}
+{% block  content%}
+<h1>Hello from Blog</h1>
+
+<h2>You have wrriten {{ blogs.count}} blog{{blogs.count|pluralize}} </h2>
+
+{% for blog in blogs %}
+
+<a href="{% url "blog:detail" blog.id %}">
+  <h2>{{ blog.title}}</h2>
+</a>
+<h2>{{ blog.date|date:"D M Y"|upper}}</h2>
+<p>{{ blog.description|safe|truncatechars:50}} </p>
+{% endfor %}
+{% endblock  %}

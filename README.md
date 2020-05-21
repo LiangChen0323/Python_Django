@@ -105,6 +105,32 @@ Problem:
 “no such column” after adding a field to the model
 apply python manage.py migrate my-app-name zero
 to drop the table
+```
 
+```
+make models at models.py
+register at admin.py
+python3 manage.py makemigrations
+python3 manage.py migrate
+add data on /admin page
+import and add models to views.py, pass models to html files
+use models at html files
+```
 
+```
+for same elements cross all the web pages
+for example: navigation bar
+
+define a base html file
+in base.html file:
+in body section, define the template with
+  {% block content %}
+  {% endblock  %}
+in other pages, content can be referred
+
+in home.html
+{% extends 'portfolio/base.html' %}
+elements
+{% block  content%}
+{% endblock  %}
 ```
